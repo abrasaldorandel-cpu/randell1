@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal Dashboard</title>
+  <link rel="stylesheet" href="css/Styles.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- 1. COLLAPSING NAVBAR -->
+  <header class="navbar">
+    <nav class="container navbar-inner" aria-label="Primary Navigation">
+      <a class="navbar-brand" href="#main-content">StudentPortal</a>
+      
+      <button class="navbar-toggler" id="menuBtn" type="button" aria-controls="portalNavbar" aria-expanded="false" aria-label="Toggle navigation menu">
+        ☰
+      </button>
+
+      <ul class="navbar-nav" id="portalNavbar">
+        <li><a class="nav-link active" href="#main-content">Dashboard</a></li>
+        <li><a class="nav-link" href="#subjects">Subjects</a></li>
+        <li><a class="nav-link" href="#register">Registration</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 2. 12-COLUMN RESPONSIVE GRID & SEMANTIC ELEMENTS -->
+  <main class="container" id="main-content" tabindex="-1">
+    
+    <header class="page-header">
+      <div>
+        <h1 class="page-title">Student Dashboard</h1>
+        <p class="text-muted">Academic Year 2026–2027 • First Semester</p>
+      </div>
+      <span class="badge badge-success desktop-tablet-only" role="status">Status: Enrolled</span>
+    </header>
+
+    <div class="row">
+
+      <!-- PROFILE CARD (4 of 12 columns on desktop) -->
+      <aside class="col-12 col-lg-4" aria-labelledby="profile-heading">
+        <div class="card">
+          <div class="card-header bg-primary">
+            <h2 class="card-title-text" id="profile-heading">Student Profile</h2>
+          </div>
+          <div class="card-body profile-center">
+            <div class="avatar" aria-hidden="true">JD</div>
+            <h3 style="font-size: 1.15rem;">Juan Dela Cruz</h3>
+            <p class="text-muted">BS Information Technology • 3rd Year</p>
+            <ul class="profile-list">
+              <li><span class="text-muted">Student ID:</span> <strong>2024-00192</strong></li>
+              <li><span class="text-muted">Email:</span> <strong>juan.dc@university.edu</strong></li>
+              <li><span class="text-muted">Advisor:</span> <strong>Prof. M. Santos</strong></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT COLUMN (8 of 12 columns on desktop) -->
+      <div class="col-12 col-lg-8 right-column">
+
+        <!-- ANNOUNCEMENTS -->
+        <section class="card" aria-labelledby="announcements-heading">
+          <div class="card-header bg-dark">
+            <h2 class="card-title-text" id="announcements-heading">Announcements</h2>
+            <span class="badge badge-warning">2 New</span>
+          </div>
+          <div class="card-body">
+            <article class="announcement-item">
+              <div class="announcement-top">
+                <h3>Midterm Examination Schedule</h3>
+                <time class="text-muted" datetime="2026-11-15">Nov 15, 2026</time>
+              </div>
+              <p class="text-muted">Midterm exams begin next Monday. Please settle any remaining balance and print your exam permit beforehand.</p>
+            </article>
+            <article class="announcement-item">
+              <div class="announcement-top">
+                <h3>Library System Maintenance</h3>
+                <time class="text-muted" datetime="2026-11-12">Nov 12, 2026</time>
+              </div>
+              <p class="text-muted">Online journal access will be offline this Saturday from 1:00 AM to 5:00 AM for server upgrades.</p>
+            </article>
+          </div>
+        </section>
+
+        <!-- SUBJECTS (Nested 12-column grid: 6+6 on tablet/desktop) -->
+        <section class="card" id="subjects" aria-labelledby="subjects-heading">
+          <div class="card-header bg-dark">
+            <h2 class="card-title-text" id="subjects-heading">Enrolled Subjects</h2>
+          </div>
+          <div class="card-body">
+            <div class="row row-tight">
+              <article class="col-12 col-md-6">
+                <div class="subject-box">
+                  <span class="badge badge-primary">IT 301</span>
+                  <h3>Web Systems &amp; Technologies</h3>
+                  <p class="text-muted">Mon / Wed • 9:00 AM – 10:30 AM</p>
+                </div>
+              </article>
+              <article class="col-12 col-md-6">
+                <div class="subject-box">
+                  <span class="badge badge-primary">IT 302</span>
+                  <h3>Database Management Systems</h3>
+                  <p class="text-muted">Tue / Thu • 1:00 PM – 2:30 PM</p>
+                </div>
+              </article>
+              <article class="col-12 col-md-6">
+                <div class="subject-box">
+                  <span class="badge badge-primary">IT 303</span>
+                  <h3>Human-Computer Interaction</h3>
+                  <p class="text-muted">Fri • 8:00 AM – 11:00 AM</p>
+                </div>
+              </article>
+              <article class="col-12 col-md-6">
+                <div class="subject-box">
+                  <span class="badge badge-primary">GE 105</span>
+                  <h3>Ethics in Computing</h3>
+                  <p class="text-muted">Sat • 10:00 AM – 1:00 PM</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- 3. VALIDATED & KEYBOARD-ACCESSIBLE REGISTRATION FORM -->
+    <section class="row form-section" id="register" aria-labelledby="register-heading">
+      <div class="col-12 col-lg-8 mx-auto">
+        <div class="card">
+          <div class="card-header bg-success">
+            <h2 class="card-title-text" id="register-heading">Subject &amp; Elective Registration Form</h2>
+          </div>
+          <div class="card-body">
+            
+            <div id="formFeedback" class="feedback-banner" role="alert" aria-live="polite" hidden></div>
+
+            <form id="registrationForm" novalidate>
+              <div class="row row-tight">
+                
+                <div class="col-12 col-md-6">
+                  <label for="fullName">Full Name <span class="required-star" aria-hidden="true">*</span></label>
+                  <input type="text" id="fullName" name="fullName" placeholder="e.g. Juan Dela Cruz" required aria-required="true" aria-describedby="fullNameError">
+                  <span class="error-msg" id="fullNameError"></span>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="studentId">Student ID <span class="required-star" aria-hidden="true">*</span></label>
+                  <input type="text" id="studentId" name="studentId" placeholder="2024-00192" required aria-required="true" aria-describedby="idHelp studentIdError">
+                  <div class="help-text" id="idHelp">Format: YYYY-XXXXX</div>
+                  <span class="error-msg" id="studentIdError"></span>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="emailInput">University Email <span class="required-star" aria-hidden="true">*</span></label>
+                  <input type="email" id="emailInput" name="emailInput" placeholder="name@university.edu" required aria-required="true" aria-describedby="emailError">
+                  <span class="error-msg" id="emailError"></span>
+                </div>
+
+                <div class="col-12 col-md-6">
+                  <label for="electiveSelect">Select Elective Track <span class="required-star" aria-hidden="true">*</span></label>
+                  <select id="electiveSelect" name="electiveSelect" required aria-required="true" aria-describedby="electiveError">
+                    <option value="">Choose a track...</option>
+                    <option value="web">Full-Stack Web Development</option>
+                    <option value="mobile">Mobile App Development</option>
+                    <option value="security">Network &amp; Cybersecurity</option>
+                  </select>
+                  <span class="error-msg" id="electiveError"></span>
+                </div>
+
+                <fieldset class="col-12">
+                  <legend>Preferred Learning Mode</legend>
+                  <div class="radio-row">
+                    <label class="check-label" for="modeOnsite">
+                      <input type="radio" name="learningMode" id="modeOnsite" value="onsite" checked>
+                      On-Campus (Face-to-Face)
+                    </label>
+                    <label class="check-label" for="modeHybrid">
+                      <input type="radio" name="learningMode" id="modeHybrid" value="hybrid">
+                      Hybrid Schedule
+                    </label>
+                  </div>
+                </fieldset>
+
+                <div class="col-12">
+                  <label class="check-label" for="termsCheck">
+                    <input type="checkbox" id="termsCheck" name="termsCheck" required aria-required="true" aria-describedby="termsError">
+                    I confirm that the registration details provided above are accurate.
+                  </label>
+                  <span class="error-msg" id="termsError"></span>
+                </div>
+
+                <div class="col-12 button-group">
+                  <button type="submit" class="btn-submit">Submit Registration</button>
+                  <button type="reset" class="btn-reset" id="resetBtn">Clear Form</button>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="text-muted">&copy; 2026 StudentPortal Academic System. Accessible &amp; Responsive UI.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
